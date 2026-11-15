@@ -1,0 +1,7 @@
+{
+  "name": "mac-mantenimiento",
+  "version": "1.0.0",
+  "description": "Diagnóstico de rendimiento, auditoría de almacenamiento, deduplicación por contenido, adelgazado de archivos de diseño y organización de multimedia en macOS. Nunca borra: mueve a cuarentena y deja manifiesto.",
+  "author": { "name": "Mario Torres" },
+  "keywords": ["macos", "mantenimiento", "almacenamiento", "deduplicacion"]
+}

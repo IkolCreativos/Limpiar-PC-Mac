@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Instalar en ~/Library/LaunchAgents/  sustituyendo RUTA_AL_SCRIPT y ETIQUETA.
+     Activar:    launchctl load -w ~/Library/LaunchAgents/ETIQUETA.plist
+     Desactivar: launchctl unload -w ~/Library/LaunchAgents/ETIQUETA.plist -->
+<plist version="1.0"><dict>
+  <key>Label</key><string>ETIQUETA</string>
+  <key>ProgramArguments</key><array><string>RUTA_AL_SCRIPT/vigilante_memoria.sh</string></array>
+  <key>StartInterval</key><integer>120</integer>
+  <key>RunAtLoad</key><true/>
+  <key>ProcessType</key><string>Background</string>
+  <key>Nice</key><integer>10</integer>
+</dict></plist>
