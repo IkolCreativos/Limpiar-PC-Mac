@@ -12,9 +12,13 @@ SWAP=$(sysctl -n vm.swapusage | sed 's/.*used = \([0-9.]*\)M.*/\1/' | cut -d. -f
 DISCO=$(df /System/Volumes/Data | awk 'NR==2{gsub("%","",$5); print $5}')
 TOP=$(ps -Aceo rss,comm -m | awk 'NR==2{printf "%s (%.1f GB)", substr($0,index($0,$2)), $1/1048576}')
 
+UMBRAL_DIAS="${UMBRAL_DIAS_ENCENDIDO:-7}"
+DIAS=$(( ( $(date +%s) - $(sysctl -n kern.boottime | sed 's/.*sec = \([0-9]*\).*/\1/') ) / 86400 ))
+
 AVISO=""
 [ "${SWAP:-0}" -gt "$UMBRAL_SWAP_MB" ] && AVISO="Memoria al limite: ${SWAP} MB en swap. Mayor consumo: ${TOP}."
 [ "${DISCO:-0}" -ge "$UMBRAL_DISCO_PCT" ] && AVISO="${AVISO} Disco al ${DISCO}%."
+[ "$DIAS" -ge "$UMBRAL_DIAS" ] && AVISO="${AVISO} ${DIAS} dias sin reiniciar: reiniciar vacia el swap."
 
 echo "$(date '+%F %H:%M') swap=${SWAP}MB disco=${DISCO}% top=${TOP}" >> "$LOG"
 tail -n 2000 "$LOG" > "$LOG.tmp" 2>/dev/null && mv "$LOG.tmp" "$LOG"

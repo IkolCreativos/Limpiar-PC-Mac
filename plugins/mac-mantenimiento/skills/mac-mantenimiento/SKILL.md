@@ -75,6 +75,21 @@ Ver `references/metadatos-multimedia.md`.
   **Comprobar antes de instalar nada**: `sips`, `ditto` y CoreGraphics cubren casi todo.
 - `references/archivos-diseno.md` — si hay material de Adobe de por medio.
 
+## Mantenimiento automático (opcional)
+
+Dos agentes de launchd en `~/Library/LaunchAgents`, con los scripts copiados a
+`~/Library/Application Support/mac-mantenimiento/`:
+
+- `vigilante_memoria.sh` cada 2 min: avisa si el swap pasa de 3 GB, el disco del
+  85 % o el equipo lleva 7 días sin reiniciar. Registro en `~/.mac-mantenimiento-vigilante.log`.
+- `limpieza_mensual.sh` el día 1 a las 11:00: copias de Chrome (`code_sign_clone`)
+  y perfiles temporales sin ventana de más de 7 días que no estén en uso, cachés de
+  npm/composer/uv, registros de más de 30 días y, si hay Xcode, DerivedData viejo y
+  simuladores no disponibles. Solo toca lo que se regenera. Registro en
+  `~/.mac-mantenimiento-limpieza.log`.
+
+Desactivar: `launchctl bootout gui/$(id -u)/com.mac-mantenimiento.<vigilante|limpieza>`.
+
 ## Advertencias generales
 
 - Las operaciones de borrado masivo pueden estar bloqueadas por los clasificadores
