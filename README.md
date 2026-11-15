@@ -13,7 +13,7 @@ que la persona decida.**
 Dentro de Claude Code:
 
 ```
-/plugin marketplace add USUARIO/mantenimiento-equipos
+/plugin marketplace add IkolCreativos/Limpiar-PC-Mac
 /plugin install mac-mantenimiento@mantenimiento-equipos
 ```
 
