@@ -1,0 +1,10 @@
+{
+  "name": "win-tuneup",
+  "version": "1.0.0",
+  "description": "Diagnóstico y optimización de rendimiento para equipos Windows con disco mecánico (HDD). Agentes, skills y scripts derivados de la optimización real del ASUS X555QG. Todo reversible, con respaldos.",
+  "author": {
+    "name": "asuntosdeldia",
+    "email": "asuntosdeldia@hotmail.com"
+  },
+  "keywords": ["windows", "rendimiento", "hdd", "diagnostico", "powershell", "optimizacion"]
+}

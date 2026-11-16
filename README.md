@@ -6,7 +6,15 @@ que la persona decida.**
 
 | Plugin | Sistema | Qué hace |
 |---|---|---|
+| `win-tuneup` | Windows | Diagnóstico y optimización de rendimiento con disco mecánico (HDD): agentes, `/diagnostico-pc`, `/monitor-disco` y scripts PowerShell reversibles |
 | `mac-mantenimiento` | macOS | Diagnóstico de rendimiento, espacio rápido, duplicados por contenido, consolidación entre discos, adelgazado de `.ai`/PDF/PSD, organización de fotos y vídeo |
+
+## Instalar en Windows
+
+```
+/plugin marketplace add IkolCreativos/Limpiar-PC-Mac
+/plugin install win-tuneup@mantenimiento-equipos
+```
 
 ## Instalar en un Mac
 

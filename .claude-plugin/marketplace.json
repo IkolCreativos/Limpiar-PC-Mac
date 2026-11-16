@@ -1,12 +1,21 @@
 {
   "name": "mantenimiento-equipos",
-  "owner": { "name": "Mario Torres" },
-  "metadata": { "description": "Mantenimiento, auditoría de almacenamiento y limpieza segura de equipos." },
+  "owner": {
+    "name": "Mario Torres"
+  },
+  "metadata": {
+    "description": "Mantenimiento, auditoría de almacenamiento y limpieza segura de equipos."
+  },
   "plugins": [
     {
       "name": "mac-mantenimiento",
       "source": "./plugins/mac-mantenimiento",
       "description": "Diagnóstico, deduplicación, consolidación y adelgazado de archivos de diseño en macOS."
+    },
+    {
+      "name": "win-tuneup",
+      "source": "./plugins/win-tuneup",
+      "description": "Diagnóstico y optimización de rendimiento para Windows con disco mecánico (HDD): agentes, comandos y scripts PowerShell reversibles."
     }
   ]
 }
